@@ -29,6 +29,7 @@ uv sync && sudo install -m 644 docs/pdf-parser@.service /etc/systemd/system/pdf-
 ```
 
 Сервис поднимет API на `0.0.0.0:8005`.
+Если путь репозитория или `uv` другой, поправь `docs/pdf-parser@.service` перед установкой.
 
 ## HTTP API
 
