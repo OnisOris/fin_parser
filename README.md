@@ -20,6 +20,16 @@ uv run pdf-parser serve --host 0.0.0.0 --port 8000
 uv run pdf-parser parse --file /path/to/file.pdf
 ```
 
+## Systemd (Ubuntu VPS)
+
+Если репозиторий лежит в `~/code/fin_parser`, установи сервис одной командой:
+
+```bash
+uv sync && sudo install -m 644 docs/pdf-parser@.service /etc/systemd/system/pdf-parser@.service && sudo systemctl daemon-reload && sudo systemctl enable --now pdf-parser@$(whoami).service
+```
+
+Сервис поднимет API на `0.0.0.0:8005`.
+
 ## HTTP API
 
 ### `POST /v1/parse`
